@@ -145,4 +145,18 @@ snippet "tb([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
+snippet head "Headnote" b
+---
+title: ${1:title}
+layout: post
+date: `!v strftime("%Y-%m-%d %H:%M:%S")`
+categories:
+  - ${2}
+tags:
+  - ${3}
+---
+
+${0}
+endsnippet
+
 # vim:ft=snippets:
