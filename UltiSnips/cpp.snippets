@@ -30,6 +30,22 @@ endglobal
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
+snippet oncec "Include header once only guard"
+#ifndef ${1:`!p
+if not snip.c:
+	import random, string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn)
+	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
+	snip.rv = ('once_%s_%s' % (name,rand)).upper()
+else:
+	snip.rv = snip.c`}
+#define $1
+
+${VISUAL}$0
+
+#endif /* end of include guard: $1 */
+endsnippet
+
 snippet ponce "#pragma once include guard"
 #pragma once
 

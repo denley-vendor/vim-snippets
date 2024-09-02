@@ -16,6 +16,10 @@ snippet incc
 snippet binc
 	#include <boost/${1:shared_ptr}.hpp>
 ##
+# #include "..."
+snippet Incc
+	#include "${1:`vim_snippets#Filename("$1")`}.h"
+##
 ## STL Collections
 # std::array
 snippet array
